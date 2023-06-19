@@ -1,0 +1,15 @@
+public static String manipulation(String stringInputDate, int days, int months, int years) {
+      DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+      LocalDate date = LocalDate.parse(stringInputDate,dateTimeFormatter);
+      LocalDate newLocalDate = date.plusDays(days).plusMonths(months).plusYears(years);
+      return newLocalDate.format(dateTimeFormatter).toString();
+    }
+}
+
+//first sunday of august
+public static String friendShipDay(int inputYear) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate date = LocalDate.of(inputYear, Month.AUGUST, 1);
+        return date.with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.SUNDAY)).format(dtf).toString();
+    }
+}
