@@ -1,1 +1,0 @@
-export JAVA_OPTS="-Xmx64M -Xms64M"
